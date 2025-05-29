@@ -90,14 +90,14 @@ namespace DDD.CarRental.ConsoleTest
                         Name = "Oil filter",
                         Manufacturer = "Bosch",
                         CostValue = 40,
-                        Currency = "PLN"
+                        Currency = "£"
                     },
                     new CreateMaintenanceEventCommand.PartDTO
                     {
                         Name = "Brake pads",
                         Manufacturer = "TRW",
                         CostValue = 120,
-                        Currency = "PLN"
+                        Currency = "£"
                     }
                 }
             };

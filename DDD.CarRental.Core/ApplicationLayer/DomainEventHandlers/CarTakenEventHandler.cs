@@ -16,7 +16,7 @@ namespace DDD.CarRental.Core.InfrastructureLayer.DomainEventHandlers
         }
         public void Handle(CarTakenDomainEvent domainEvent)
         {
-            var car = _carRepository.Get(domainEvent.Rental.Id);
+            var car = _carRepository.Get(domainEvent.Rental.CarId);
             car.SetAsRented();
         }
     }

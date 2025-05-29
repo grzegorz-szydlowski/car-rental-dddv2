@@ -19,7 +19,7 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF.EntityConfigurations
 
             rentalConfiguration.OwnsOne(r => r.Total, rb =>
             {
-                rb.Property(m => m.Value).HasColumnName("Total_Value");
+                rb.Property(m => m.Amount).HasColumnName("Total_Value");
                 rb.Property(m => m.Currency).HasColumnName("Total_Currency");
             });
         }

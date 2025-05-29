@@ -19,7 +19,7 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF.EntityConfigurations
 
             builder.OwnsOne(m => m.Cost, cb =>
             {
-                cb.Property(c => c.Value).HasColumnName("Cost_Value");
+                cb.Property(c => c.Amount).HasColumnName("Cost_Value");
                 cb.Property(c => c.Currency).HasColumnName("Cost_Currency");
             });
 
@@ -36,7 +36,7 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF.EntityConfigurations
 
                 part.OwnsOne(p => p.Cost, cb =>
                 {
-                    cb.Property(c => c.Value).HasColumnName("PartCost_Value");
+                    cb.Property(c => c.Amount).HasColumnName("PartCost_Value");
                     cb.Property(c => c.Currency).HasColumnName("PartCost_Currency");
                 });
             });

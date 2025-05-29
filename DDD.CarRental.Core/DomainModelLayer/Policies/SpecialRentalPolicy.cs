@@ -12,7 +12,7 @@ public class SpecialRentalPolicy : IRentalPolicy
         this.Name = "Special discount policy";
     }
 
-    public Money CalculateDiscount(Money total, long numOfMinutes, Money unitPrice)
+    public Money CalculateDiscount(Money total, long numOfMinutes)
     {
         decimal percent = 0.01m;
         if (numOfMinutes > 30)

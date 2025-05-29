@@ -3,6 +3,7 @@ using DDD.CarRental.Core.DomainModelLayer.Interfaces;
 using DDD.CarRental.Core.DomainModelLayer.Models;
 using System;
 using System.Collections.Generic;
+using DDD.SharedKernel.DomainModelLayer.Implementations;
 
 namespace DDD.CarRental.Core.ApplicationLayer.Commands.Handlers
 {
@@ -59,7 +60,6 @@ namespace DDD.CarRental.Core.ApplicationLayer.Commands.Handlers
                 throw new InvalidOperationException("Car is not available for rental.");
 
             var rental = new Rental(command.RentalId, car.Id, driver.Id, command.StartTime);
-            car.SetAsRented();
 
             _unitOfWork.RentalRepository.Insert(rental);
             _unitOfWork.Commit();

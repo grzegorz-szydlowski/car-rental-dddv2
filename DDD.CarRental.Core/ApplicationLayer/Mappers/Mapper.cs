@@ -41,7 +41,7 @@ namespace DDD.CarRental.Core.ApplicationLayer.Mappers
                 DriverId = rental.DriverId,
                 Started = rental.Started,
                 Finished = rental.Finished,
-                TotalAmount = rental.Total?.Value ?? 0,
+                TotalAmount = rental.Total?.Amount ?? 0,
                 TotalCurrency = rental.Total?.Currency ?? "PLN"
             };
         }
@@ -72,7 +72,7 @@ namespace DDD.CarRental.Core.ApplicationLayer.Mappers
                 CarId = m.CarId,
                 Date = m.Date,
                 Description = m.Description,
-                TotalCost = m.Cost.Value,
+                TotalCost = m.Cost.Amount,
                 Currency = m.Cost.Currency
             };
 
@@ -82,7 +82,7 @@ namespace DDD.CarRental.Core.ApplicationLayer.Mappers
                 {
                     Name = part.Name,
                     Manufacturer = part.Manufacturer,
-                    Cost = part.Cost.Value,
+                    Cost = part.Cost.Amount,
                     Currency = part.Cost.Currency
                 });
             }

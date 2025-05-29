@@ -10,7 +10,7 @@ public class NormalRentalPolicy : IRentalPolicy
     {
         this.Name = "Standard discount policy";
     }
-    public Money CalculateDiscount(Money total, long numOfMinutes, Money unitPrice)
+    public Money CalculateDiscount(Money total, long numOfMinutes)
     {
         decimal percent = 0.01m;
         return total.MultiplyBy(percent);

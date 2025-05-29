@@ -33,13 +33,13 @@ namespace DDD.CarRental.Core.DomainModelLayer.Models
         {
             var part = new PartReplaced(name, manufacturer, cost);
             _parts.Add(part);
-            Cost = Cost.Add(cost);
+            Cost += cost;
         }
 
         public void AddPart(PartReplaced part)
         {
             _parts.Add(part);
-            Cost = Cost.Add(part.Cost);
+            Cost += part.Cost;
         }
     }
 }
