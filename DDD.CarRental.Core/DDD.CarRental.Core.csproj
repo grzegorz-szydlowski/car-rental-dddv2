@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ApplicationLayer\DomainEventHandlers\" />
     <Folder Include="DomainModelLayer\Events\" />
-    <Folder Include="DomainModelLayer\Policies\" />
     <Folder Include="DomainModelLayer\Services\" />
   </ItemGroup>
 

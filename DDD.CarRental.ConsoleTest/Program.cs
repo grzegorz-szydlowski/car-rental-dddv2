@@ -7,7 +7,10 @@ using DDD.SharedKernel.DomainModelLayer;
 using DDD.SharedKernel.InfrastructureLayer.Implementations;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using DDD.CarRental.Core.DomainModelLayer.Events;
 using DDD.CarRental.Core.DomainModelLayer.Services;
+using DDD.CarRental.Core.InfrastructureLayer.DomainEventHandlers;
+using DDD.SharedKernel.ApplicationLayer;
 
 namespace DDD.CarRental.ConsoleTest
 {
@@ -39,6 +42,7 @@ namespace DDD.CarRental.ConsoleTest
 
             // registering event publisher and handlers
             serviceCollection.AddSingleton<IDomainEventPublisher, SimpleEventPublisher>();
+            serviceCollection.AddSingleton<IEventHandler<CarTakenDomainEvent>, CarTakenEventHandler>();
             
             // registering unit of work and repos
             serviceCollection.AddSingleton<ICarRentalUnitOfWork, CarRentalUnitOfWork>();
@@ -47,6 +51,7 @@ namespace DDD.CarRental.ConsoleTest
             serviceCollection.AddSingleton<IRentalRepository, RentalRepository>();
             
             // registering domain model services, factories
+            //Nie dodajemy mappera bo jest u nas klasą typu static zamiast servicem singleton 
             //serviceCollection.AddSingleton<Mapper>();
 
             // ToDo: Zarejestruj pozostałe usługi, fabryki, polityki, itp.

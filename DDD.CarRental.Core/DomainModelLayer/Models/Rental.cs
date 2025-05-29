@@ -1,6 +1,7 @@
 ﻿using DDD.SharedKernel.DomainModelLayer;
 using DDD.SharedKernel.DomainModelLayer.Implementations;
 using System;
+using DDD.CarRental.Core.DomainModelLayer.Events;
 
 namespace DDD.CarRental.Core.DomainModelLayer.Models
 {
@@ -23,6 +24,7 @@ namespace DDD.CarRental.Core.DomainModelLayer.Models
             DriverId = driverId;
             Started = started;
             Total = Money.Zero;
+            this.AddDomainEvent(new CarTakenDomainEvent(this));
         }
 
         public void EndRental(DateTime endTime, decimal pricePerMinute, int freeMinutes)
