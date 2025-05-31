@@ -6,6 +6,7 @@ using DDD.CarRental.Core.ApplicationLayer.Queries.Handlers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace DDD.CarRental.ConsoleTest
 {
@@ -90,15 +91,15 @@ namespace DDD.CarRental.ConsoleTest
                         Name = "Oil filter",
                         Manufacturer = "Bosch",
                         CostValue = 40,
-                        Currency = "£"
+                        Currency = NumberFormatInfo.CurrentInfo.CurrencySymbol
                     },
                     new CreateMaintenanceEventCommand.PartDTO
                     {
                         Name = "Brake pads",
                         Manufacturer = "TRW",
                         CostValue = 120,
-                        Currency = "£"
-                    }
+                        Currency = NumberFormatInfo.CurrentInfo.CurrencySymbol
+        }
                 }
             };
             _commandHandler.Execute(maintenanceCommand);
