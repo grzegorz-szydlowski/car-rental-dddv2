@@ -11,13 +11,10 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Driver> driverConfiguration)
         {
-            // ustawianie klucza głównego
             driverConfiguration.HasKey(c => c.Id);
 
-            // klucz tabeli nie będzie generowany przez EF
             driverConfiguration.Property(v => v.Id).ValueGeneratedNever();
 
-            // wykluczenie DomainsEvents z modelu relacyjnego - nie ma potrzeby zapisywania w bazie zdarzeń domenowych
             driverConfiguration.Ignore(c => c.DomainEvents);
 
             // ToDo: konfiguracja pozostalych elementów

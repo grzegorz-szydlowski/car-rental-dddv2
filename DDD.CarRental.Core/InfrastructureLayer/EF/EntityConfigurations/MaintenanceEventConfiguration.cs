@@ -11,7 +11,7 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF.EntityConfigurations
             builder.HasKey(m => m.Id);
             builder.Property(m => m.Id).ValueGeneratedNever();
             builder.Ignore(m => m.DomainEvents);
-            builder.Ignore(m => m.Parts); // ❗ TO JEST KLUCZOWE
+            builder.Ignore(m => m.Parts);
 
             builder.Property(m => m.CarId).IsRequired();
             builder.Property(m => m.Date).IsRequired();

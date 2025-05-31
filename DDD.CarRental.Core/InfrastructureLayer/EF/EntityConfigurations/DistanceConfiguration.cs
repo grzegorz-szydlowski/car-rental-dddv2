@@ -9,7 +9,7 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF
         public void Configure(EntityTypeBuilder<Distance> builder)
         {
             builder.Property<long>("Id").IsRequired();
-            builder.HasKey("Id"); // Shadow primary key if not defined
+            builder.HasKey("Id"); 
 
             builder.Property(d => d.Value)
                 .IsRequired();
@@ -18,10 +18,8 @@ namespace DDD.CarRental.Core.InfrastructureLayer.EF
                 .IsRequired()
                 .HasMaxLength(10);
 
-            // You can define a discriminator if needed or use table-per-hierarchy strategies
 
-            // Optional: if you want to expose shadow foreign key property names
-            builder.Property<long?>("CarId"); // shadow FK
+            builder.Property<long?>("CarId");
         }
     }
 }
